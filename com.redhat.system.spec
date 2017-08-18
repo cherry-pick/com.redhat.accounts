@@ -28,7 +28,8 @@ Red Hat System API.
 %files
 %license LICENSE
 %doc README.md
-%{prefix}/lib/%{name}/*
+%{python3_sitelib}/*
+%{_prefix}/lib/%{name}/*
 
 %changelog
 * %{build_date} <info@varlink.org> %{version}-%{build_timestamp}
