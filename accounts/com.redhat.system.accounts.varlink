@@ -1,0 +1,22 @@
+interface com.redhat.system.accounts
+
+type Account (
+  name: string,
+  uid: int,
+  gid: int,
+  full_name: string,
+  home: string,
+  shell: string
+)
+
+method GetAccounts() -> (accounts: Account[])
+
+method GetAccountByUid(uid: int) -> (account: Account)
+
+method GetAccountByName(name: string) -> (account: Account)
+
+method AddAccount(account: Account) -> (account: Account)
+
+error AccountNotFound ()
+
+error AccountCreationFailed (reason: string)
