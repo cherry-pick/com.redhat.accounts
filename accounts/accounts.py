@@ -26,11 +26,11 @@ def account_from_pw(pw):
 
 
 class AccountCreationFailed(varlink.VarlinkError):
-    def __init__(self, reason=None):
+    def __init__(self, field=None):
         self.name = 'com.redhat.systems.accounts.AccountCreationFailed'
         self.parameters = {}
-        if reason:
-            self.parameters['reason'] = reason
+        if field:
+            self.parameters['field'] = field
 
 
 @service.interface('com.redhat.system.accounts')

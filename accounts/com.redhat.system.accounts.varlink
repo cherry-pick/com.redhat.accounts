@@ -19,4 +19,4 @@ method AddAccount(account: Account) -> (account: Account)
 
 error AccountNotFound ()
 
-error AccountCreationFailed (reason: string)
+error AccountCreationFailed (field: string)
