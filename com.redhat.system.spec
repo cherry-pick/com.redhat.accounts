@@ -1,13 +1,10 @@
-%define build_date %(date +"%%a %%b %%d %%Y")
-%define build_timestamp %(date +"%%Y%%m%%d.%%H%M%%S")
-
 Name:           com.redhat.system
 Version:        1
-Release:        %{build_timestamp}%{?dist}
+Release:        1%{?dist}
 Summary:        Red Hat System API
 License:        ASL2.0
-URL:            https://github.com/varlink/python-varlink
-Source0:        https://github.com/varlink/python-varlink/archive/v%{version}.tar.gz
+URL:            https://github.com/varlink/%{name}
+Source0:        https://github.com/varlink/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 Requires:       python-varlink
 
 BuildArch:      noarch
@@ -32,5 +29,5 @@ Red Hat System API.
 %{_prefix}/lib/%{name}/*
 
 %changelog
-* %{build_date} <info@varlink.org> %{version}-%{build_timestamp}
-- %{name} %{version}
+* Tue Aug 29 2017 <info@varlink.org> 1-1
+- com.redhat.system 1
