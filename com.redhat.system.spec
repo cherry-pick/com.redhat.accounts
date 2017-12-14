@@ -8,7 +8,7 @@ Source0:        https://github.com/varlink/%{name}/archive/v%{version}/%{name}-%
 Requires:       python-varlink
 
 BuildArch:      noarch
-BuildRequires:  python3-devel
+BuildRequires:  pkgconfig(python3) python3-rpm-macros
 
 %description
 Red Hat System API.
