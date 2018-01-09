@@ -8,8 +8,8 @@ import sys
 import varlink
 
 service = varlink.Service(
-    vendor='Red Hat, Inc.',
-    product='Accounts Service',
+    vendor='Red Hat',
+    product='Manage System Accounts',
     version='1',
     interface_dir=os.path.dirname(__file__)
 )
@@ -27,7 +27,7 @@ def account_from_pw(pw):
 
 class AccountCreationFailed(varlink.VarlinkError):
     def __init__(self, field=None):
-        self.name = 'com.redhat.systems.accounts.AccountCreationFailed'
+        self.name = 'com.redhat.systems.accounts.CreationFailed'
         self.parameters = {}
         if field:
             self.parameters['field'] = field
@@ -35,16 +35,16 @@ class AccountCreationFailed(varlink.VarlinkError):
 
 @service.interface('com.redhat.system.accounts')
 class Accounts:
-    def GetAccounts(self):
+    def GetAll(self):
         return { 'accounts': [ account_from_pw(pw) for pw in pwd.getpwall() ] }
 
-    def GetAccountByUid(self, uid):
+    def GetByUid(self, uid):
         return { 'account': account_from_pw(pwd.getpwuid(uid)) }
 
-    def GetAccountByName(self, name):
+    def GetByName(self, name):
         return { 'account': account_from_pw(pwd.getpwnam(name)) }
 
-    def AddAccount(self, account):
+    def Add(self, account):
         if not 'name' in account:
             raise varlink.InvalidParameter('name')
 

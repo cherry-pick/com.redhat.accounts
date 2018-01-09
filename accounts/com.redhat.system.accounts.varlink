@@ -1,3 +1,4 @@
+# Manage System Accounts
 interface com.redhat.system.accounts
 
 type Account (
@@ -9,14 +10,18 @@ type Account (
   shell: string
 )
 
-method GetAccounts() -> (accounts: Account[])
+# Retrieve a list of account information for all known accounts
+method GetAll() -> (accounts: Account[])
 
-method GetAccountByUid(uid: int) -> (account: Account)
+# Retrieve the account information for a specific user ID
+method GetByUid(uid: int) -> (account: Account)
 
-method GetAccountByName(name: string) -> (account: Account)
+# Retrieve the account information
+method GetByName(name: string) -> (account: Account)
 
-method AddAccount(account: Account) -> (account: Account)
+# Add new account
+method Add(account: Account) -> (account: Account)
 
-error AccountNotFound ()
+error NotFound ()
 
-error AccountCreationFailed (field: string)
+error CreationFailed (field: string)
