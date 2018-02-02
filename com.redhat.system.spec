@@ -5,7 +5,7 @@ Summary:        Red Hat System API
 License:        ASL2.0
 URL:            https://github.com/varlink/%{name}
 Source0:        https://github.com/varlink/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
-Requires:       python-varlink
+Requires:       python3-varlink
 
 BuildArch:      noarch
 BuildRequires:  pkgconfig(python3) python3-rpm-macros
