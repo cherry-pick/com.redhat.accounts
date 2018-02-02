@@ -26,12 +26,9 @@ def account_from_pw(pw):
 
 
 class AccountCreationFailed(varlink.VarlinkError):
-    def __init__(self, field=None):
-        self.name = 'com.redhat.systems.accounts.CreationFailed'
-        self.parameters = {}
-        if field:
-            self.parameters['field'] = field
-
+    def __init__(self, field):
+        varlink.VarlinkError.__init__(self, {'error': 'com.redhat.systems.accounts.CreationFailed',
+                                     'parameters': {'field': field}})
 
 @service.interface('com.redhat.system.accounts')
 class Accounts:
@@ -89,4 +86,4 @@ try:
 except OSError:
     listen_fd = None
 
-service.serve(sys.argv[1], listen_fd=listen_fd)
+varlink.SimpleServer(service).serve(sys.argv[1], listen_fd=listen_fd)
