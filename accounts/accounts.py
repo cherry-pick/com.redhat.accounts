@@ -9,7 +9,7 @@ import varlink
 
 service = varlink.Service(
     vendor='Red Hat',
-    product='Manage System Accounts',
+    product='Accounts Manager',
     version='1',
     interface_dir=os.path.dirname(__file__)
 )
@@ -27,10 +27,10 @@ def account_from_pw(pw):
 
 class AccountCreationFailed(varlink.VarlinkError):
     def __init__(self, field):
-        varlink.VarlinkError.__init__(self, {'error': 'com.redhat.systems.accounts.CreationFailed',
+        varlink.VarlinkError.__init__(self, {'error': 'com.redhat.accounts.CreationFailed',
                                      'parameters': {'field': field}})
 
-@service.interface('com.redhat.system.accounts')
+@service.interface('com.redhat.accounts')
 class Accounts:
     def GetAll(self):
         return { 'accounts': [ account_from_pw(pw) for pw in pwd.getpwall() ] }

@@ -1,16 +1,16 @@
 from distutils.core import setup
 
 setup(
-    name = "com.redhat.system",
+    name = "com.redhat.accounts",
     version = "1",
     author = "Lars Karlitski",
     author_email = "lars@karlitski.net",
-    url = "https://github.com/varlink/com.redhat.system",
+    url = "https://github.com/varlink/com.redhat.accounts",
     license = "ASL2.0",
     data_files = [
-        ('lib/com.redhat.system', [
+        ('lib/com.redhat', [
             'accounts/accounts.py',
-            'accounts/com.redhat.system.accounts.varlink'
+            'accounts/com.redhat.accounts.varlink'
         ])
     ]
 )

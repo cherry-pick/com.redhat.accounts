@@ -1,5 +1,5 @@
-# Manage System Accounts
-interface com.redhat.system.accounts
+# Accounts Interfce
+interface com.redhat.accounts
 
 type Account (
   name: string,

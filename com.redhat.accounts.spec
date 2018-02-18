@@ -1,7 +1,7 @@
-Name:           com.redhat.system
+Name:           com.redhat.accounts
 Version:        1
 Release:        1%{?dist}
-Summary:        Red Hat System API
+Summary:        Accounts Interface
 License:        ASL2.0
 URL:            https://github.com/varlink/%{name}
 Source0:        https://github.com/varlink/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -11,7 +11,7 @@ BuildArch:      noarch
 BuildRequires:  pkgconfig(python3) python3-rpm-macros
 
 %description
-Red Hat System API.
+Accounts Interface.
 
 %prep
 %setup -q
@@ -26,8 +26,8 @@ Red Hat System API.
 %license LICENSE
 %doc README.md
 %{python3_sitelib}/*
-%{_prefix}/lib/%{name}/*
+%{_prefix}/lib/com.redhat/*
 
 %changelog
 * Tue Aug 29 2017 <info@varlink.org> 1-1
-- com.redhat.system 1
+- com.redhat.accounts 1
