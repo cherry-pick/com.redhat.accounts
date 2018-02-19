@@ -9,8 +9,8 @@ setup(
     license = "ASL2.0",
     data_files = [
         ('lib/com.redhat', [
-            'accounts/accounts.py',
-            'accounts/com.redhat.accounts.varlink'
+            'src/accounts.py',
+            'src/com.redhat.accounts.varlink'
         ])
     ]
 )
