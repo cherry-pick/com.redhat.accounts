@@ -1,4 +1,4 @@
-# Accounts Interfce
+# Accounts Interface
 interface com.redhat.accounts
 
 type Account (
