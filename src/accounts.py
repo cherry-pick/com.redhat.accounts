@@ -80,10 +80,4 @@ if len(sys.argv) < 2:
     print('missing address parameter')
     sys.exit(1)
 
-try:
-    if stat.S_ISSOCK(os.fstat(3).st_mode):
-        listen_fd = 3
-except OSError:
-    listen_fd = None
-
-varlink.SimpleServer(service).serve(sys.argv[1], listen_fd=listen_fd)
+varlink.SimpleServer(service).serve(sys.argv[1])
