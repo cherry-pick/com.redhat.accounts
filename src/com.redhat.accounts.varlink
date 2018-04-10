@@ -11,7 +11,7 @@ type Account (
 )
 
 # Retrieve a list of account information for all known accounts
-method GetAll() -> (accounts: Account[])
+method GetAll() -> (accounts: []Account)
 
 # Retrieve the account information for a specific user ID
 method GetByUid(uid: int) -> (account: Account)
