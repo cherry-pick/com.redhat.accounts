@@ -5,7 +5,7 @@ Summary:        Accounts Interface
 License:        ASL2.0
 URL:            https://github.com/varlink/%{name}
 Source0:        https://github.com/varlink/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
-Requires:       python3-varlink
+Requires:       python3-varlink >= 20
 
 BuildArch:      noarch
 BuildRequires:  pkgconfig(python3) python3-rpm-macros
